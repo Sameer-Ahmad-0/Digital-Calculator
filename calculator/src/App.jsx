@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <h1 className=' text-2xl'>Calculator</h1>
+      <h1 className=' text-2xl'>Digital-Calculator</h1>
       <Calculator/>
     </>
   )

@@ -14,8 +14,9 @@ const Calculator = () => {
 
   const calculate = () => {
     try {
-      const result = eval(displayValue);
-      setDisplayValue(displayValue + ' = ' + result); 
+      const sanitizedInput = displayValue.replace(/[^-()\d/*+.]/g, ''); 
+      const result = new Function('return ' + sanitizedInput)(); 
+      setDisplayValue(displayValue + ' = ' + result);
     } catch (error) {
       setDisplayValue('Error');
     }
